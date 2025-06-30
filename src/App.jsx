@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-
+import { toastdev } from "@azadev/react-toastdev"
 const fetcher = (url) => fetch(url).then(res => res.json())
 
 function App() {
@@ -61,6 +61,7 @@ function App() {
 
   return (
     <div>
+      <button onClick={() => toastdev.success('Hello World!')}>Toast</button>
       <h1>SWR - Category</h1>
       <p><strong>Name:</strong> {data?.name}</p>
       <p><strong>Description:</strong> {data?.description}</p>
